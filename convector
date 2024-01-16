@@ -1,0 +1,19 @@
+var component = "";         // ввести один из компонентов "км", "години" или "кг"
+var value = ;               // ввести числовое значение
+ 
+switch (component) {
+    case "км":
+        var convertedValue = value * 1000;
+        console.log(value + " " + component + " это " + convertedValue + " м.");
+        break;
+    case "години":
+        var convertedValue = value * 60;
+        console.log(value + " " + component + " это " + convertedValue + " хв.");
+        break;
+    case "кг":
+        var convertedValue = value * 1000;
+        console.log(value + " " + component + " это " + convertedValue + " гр.");
+        break;
+    default:
+        console.log("Одиницю вимірювання не визначено або не вказана кількість");
+}

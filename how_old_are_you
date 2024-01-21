@@ -1,0 +1,42 @@
+
+// первый вариант написал по уроку, но тут есть недочет в годах если они заканчиваются на 22, 23, 23, 25 ... и больше 100
+
+var years = prompt("Скільки тобі років?");
+
+if (isNaN(years) || +years < 0) {
+    console.log("Будь ласка, введіть додатнє число.");
+} else {
+    if (+years === 1) {
+        console.log(years + ' рік');
+    } else if (+years >= 2 && +years <= 4) {
+        console.log(years + ' роки');
+    } else {
+        console.log(years + ' років');
+    }
+}
+
+
+
+// второй вариант
+
+/*тут я уже мониторил и искал в интернете как улучшить. Улучшил с помощью переменных lastDigit, lastTwoDigits 
+Если последняя цифра = 1 и  две цифры не равны 11, то будет "рік".
+Если последняя цифра от 2 до 4 и не входят в диапазон от 10 до 20, то будут "роки"
+И в остальных вариантах будет "років".
+*/
+var years = prompt("Скільки тобі років?");
+
+if (isNaN(years) || +years < 0) {
+    console.log("Будь ласка, введіть додатнє число.");
+} else {
+    var lastDigit = +years % 10;
+    var lastTwoDigits = +years % 100;
+
+    if (lastDigit === 1 && lastTwoDigits !== 11) {
+        console.log(years + ' рік');
+    } else if ((lastDigit >= 2 && lastDigit <= 4) && (lastTwoDigits < 10 || lastTwoDigits > 20)) {
+        console.log(years + ' роки');
+    } else {
+        console.log(years + ' років');
+    }
+}

@@ -17,7 +17,7 @@ services.price = function () {
 };
 
 services.maxPrice = function () {
-    var total = Infinity;
+    var max = -Infinity;
     for (var service in this) {
         if (typeof this[service] == 'number' && this[service] > max) {
             max = this[service];
@@ -27,7 +27,7 @@ services.maxPrice = function () {
 };
 
 services.minPrice = function () {
-    var total = Infinity;
+    var min = Infinity;
     for (var service in this) {
         if (typeof this[service] == 'number' && this[service] < min) {
             min = this[service]

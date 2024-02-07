@@ -26,9 +26,6 @@ function isTrustedDomain(email) {                                               
     return domain === 'gmail.com' || domain === 'yahoo.com';
 }
 
-var trustedEmails = email_list.filter(obj => {                                                         // фильр выборки почты
-    return isValidEmail(obj.email) && isTrustedDomain(obj.email);
-});
-
-
+var trustedEmails = email_list.filter(obj => isValidEmail(obj.email) && isTrustedDomain(obj.email)).map(obj => obj.email);
+// с помощью метода filter  делвем выборку по доверенной почты и после с помощью метода map делаем новый массив который возвразает только почты
 console.log(trustedEmails);

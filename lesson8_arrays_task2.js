@@ -55,6 +55,15 @@ function findValueByKey(companyName, obj) {
         }
     }
 
+    if (obj.partners) {                                                          
+        for (const partner of obj.partners) {                                    // есть ли у объекта свойста партнеров
+            const result = findValueByKey(companyName, partner);
+            if (result) {                                                       
+                return result;
+            }
+        }
+    }
+
     return null;                                                                //если не находим возвращаем null
 }
 
